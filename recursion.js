@@ -13,19 +13,13 @@ and return a Boolean.
 Test it on 50 and 75. See how it behaves on -1. Why? Can you think of any way
 to fix this? */
 
-// function isEven(num){
-    
-//     if (num===2){
-//         console.log(num===2)}
+//Make sure to return every conditional statement when using recursive functions otherwise a stack overflow can occur.
 
-//     if (num===1){
-//         console.log(num===1)
-//     }
-    
-//     else num -= num;
-//     isEven(num);
-// }
+function isEven(n) {
+    if (n == 0) return true;
+    else if (n == 1) return false;
+    else if (n < 0) return isEven(-n);
+    else return isEven(n - 2);
+  }
 
-
-
-isEven(5);
+isEven(31)
