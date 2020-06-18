@@ -4,8 +4,9 @@ You are given a variable celsius representing a temperature in Celsius. Use the 
 
 
 function convertToF(celsius) {
-  let fahrenheit;
-  return fahrenheit;
+  let fahrenheit = (celsius*(9/5));  
+  return console.log(fahrenheit);
 }
 
 convertToF(30);
+ 
