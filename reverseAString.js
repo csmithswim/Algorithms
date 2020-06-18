@@ -12,12 +12,12 @@ function reverseString(str) {
 
   // Another way to reverse a string.
 
-  function reverseString(str) {
-    return str
-      .split("")
-      .reverse()
-      .join("");
-  }
+  // function reverseString(str) { //using the split, rever and join methods. Split takes a string and splits the characters into an array. Reverse is an array method that reverses the elements of an array and join is an array method that joins the elements into a string.
+  //   return str
+  //     .split("")
+  //     .reverse()
+  //     .join("");
+  // }
 
 
   console.log(reverseString("hello"));
