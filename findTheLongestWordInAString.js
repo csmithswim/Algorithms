@@ -2,8 +2,24 @@
 
 Your response should be a number.*/ 
 
+//? Find a way to measure the length of each substring and then return that particular substring.length.
+
 function findLongestWordLength(str) {
-  return str.length;
+    let arr = str.split(" ");
+
+    arr.sort(function(a,b){
+
+        return b.length-a.length
+
+         })
+
+    let newArr = arr[0];
+    return newArr.length;
 }
 
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+findLongestWordLength("What if we try a super-long word such as otorhinolaryngology");
+
+
+
+
