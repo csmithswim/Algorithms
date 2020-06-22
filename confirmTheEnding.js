@@ -4,7 +4,7 @@ This challenge can be solved with the .endsWith() method, which was introduced i
 
 function confirmEnding(str, target) {
 
-    if (target == str.substring(str.length-1) && target.substring(0,target.length-1) == str.substring(str.length-target.length, str.length-1)) {
+    if (target.substring(target.length-1) == str.substring(str.length-1) && target.substring(0,target.length-1) == str.substring(str.length-target.length, str.length-1)) {
 
         console.log('true')
 
@@ -14,11 +14,5 @@ function confirmEnding(str, target) {
     return false;
 }
 
-confirmEnding("Abstraction", "action");
+confirmEnding("He has to give me a new name", "name");
 
-// let str = 'connor'
-// let target = 'n'
-
-// console.log(target.length)
-// console.log(target.substring(0,0))
-// console.log(str.substring(str.length-target.length, str.length-1))
