@@ -18,10 +18,22 @@ booWho("false") should return false.
 */
 
 function booWho(bool) {
-    return bool;
-  }
+// console.log(typeof("a"))
+
+if (typeof(bool) === typeof(true)){
+
+    console.log(true)
+
+    return true;
+
+  } else console.log(false)
+
+  return false;
+}
+
   
-  booWho(null);
+
+  booWho(1,2,3);
 
   
   
