@@ -14,25 +14,28 @@ function titleCase(str) {
   let newLowerStr = lowerStr.split(" ");
   let newUpperStr = upperStr.split(" ");
   let titleStr = [];
-  let genStr = [];
-
+  let finalSentence = '';
 
   for (let i = 0; i < newUpperStr.length; i++) {
 
-    titleStr[i] = newUpperStr[i][0];
-
-
+    titleStr[i] = newUpperStr[i][0] + newLowerStr[i].slice(1);
   }
-    // return titleStr;
 
-
-  for (let i = 0; i < newLowerStr.length; i++) {
-    
-    genStr = newLowerStr[i].slice(1)
-console.log(genStr)
-  }
-  // return genStr
- 
-  console.log(titleStr + genStr)
+finalSentence = titleStr.join(' ')
+// console.log(finalSentence)
+return finalSentence;
 }
-  titleCase("I'm a little tea pot");
+
+titleCase("I'm a little tea pot");
+
+
+
+
+
+
+
+
+
+
+
+
