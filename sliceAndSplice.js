@@ -8,18 +8,24 @@ The first array should remain the same after the function runs.
 The second array should remain the same after the function runs.
 */ 
 
-//?We are splicing arr1 into index n in arr2
+//?We are splicing arr1 into index n in arr2. We need to have a for loop iterate through and splice arr1 into arr2 at index n.
 
 function frankenSplice(arr1, arr2, n) {
+    let finalArray = []
+    for (let i = arr1.length-1; i >=  0; i--) {
 
-    arr2.splice(n, 0, arr1);
+    arr2.splice(n,0,arr1[i]);
+        
+    }
+
+    finalArray = arr2
+
+    arr2 = finalArray.slice(n-1, arr1.length+1)
+
     console.log(arr2)
+    console.log(finalArray)
+    
   }
   
-  frankenSplice([1, 2, 3], [4, 5, 6], 1);
-  
+frankenSplice([1, 2, 3], [4, 5], 1)
 
-// const arr3 = [3,4,5,7]
-// arr3.splice(1,0,8,9);
-
-// console.log(arr3)
