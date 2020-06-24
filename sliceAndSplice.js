@@ -6,12 +6,20 @@ frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2) s
 All elements from the first array should be added to the second array in their original order.
 The first array should remain the same after the function runs.
 The second array should remain the same after the function runs.
-
 */ 
 
+//?We are splicing arr1 into index n in arr2
+
 function frankenSplice(arr1, arr2, n) {
-    return arr2;
+
+    arr2.splice(n, 0, arr1);
+    console.log(arr2)
   }
   
   frankenSplice([1, 2, 3], [4, 5, 6], 1);
   
+
+// const arr3 = [3,4,5,7]
+// arr3.splice(1,0,8,9);
+
+// console.log(arr3)
