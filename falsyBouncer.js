@@ -6,7 +6,17 @@ bouncer([false, null, 0, NaN, undefined, ""]) should return [].
 bouncer([null, NaN, 1, 2, undefined]) should return [1, 2]. */ 
 
 function bouncer(arr) {
-  return arr;
+    for (let i = 0; i < arr.length; i++) {
+        // console.log(!!arr[i])
+        if (!!arr[i] === false) {
+
+            arr.splice(i, 1)
+
+            i = i - 1;
+        }
+    }
+    console.log(arr)
+    return arr
 }
 
-bouncer([7, "ate", "", false, 9]);
+bouncer([null, NaN, 1, 2, undefined]) 
