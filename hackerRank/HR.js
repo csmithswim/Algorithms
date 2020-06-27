@@ -1,3 +1,4 @@
+//?Challenege 1
 /**
 *   A line of code that prints "Hello, World!" on a new line is provided in the editor. 
 *   Write a second line of code that prints the contents of 'parameterVariable' on a new line.
@@ -16,6 +17,8 @@ function greeting() {
 }
 
 // greeting()
+
+//?Challenge 2
 
 /**
 *   The variables 'firstInteger', 'firstDecimal', and 'firstString' are declared for you -- do not modify them.
@@ -50,5 +53,41 @@ function performOperation(secondInteger, secondDecimal, secondString) {
     
 }
 
-performOperation('2', '3.4', 'hello')
+// performOperation('2', '3.4', 'hello')
+
+
+//? Challenege 3
+/**
+*   Calculate the area of a rectangle.
+*
+*   length: The length of the rectangle.
+*   width: The width of the rectangle.
+*   
+*	Return a number denoting the rectangle's area.
+**/
+function getArea(length, width) {
+    let area;
+    // Write your code here
+    area = length*width;
+
+    return area;
+}
+
+/**
+*   Calculate the perimeter of a rectangle.
+*	
+*	length: The length of the rectangle.
+*   width: The width of the rectangle.
+*   
+*	Return a number denoting the perimeter of a rectangle.
+**/
+function getPerimeter(length, width) {
+    let perimeter;
+    // Write your code here
+    perimeter = 2 * (length+width);
+
+    return perimeter;
+}
+
+//?Challenge 4
 
