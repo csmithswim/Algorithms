@@ -17,7 +17,6 @@ mutation(["Noel", "Ole"]) should return true.
 function mutation(arr) {
 let testStr = []
 let mainStr = [];
-  // arr[1] //This is the array we need to test against arr[0] to find matches
 
   for (let i = 0; i < arr[0].length; i++) {
     
@@ -29,16 +28,51 @@ let mainStr = [];
     testStr[i] = arr[1][i].toLowerCase()
   }
   
-  for (let i = 0; i < mainStr.length; i++) {
-    
-    console.log(mainStr.indexOf(testStr[i], 0))
-    // console.log(mainStr)
-    // console.log(testStr[i])
+  for (let i = 0; i < testStr.length; i++) {
+
+    if((mainStr.indexOf(testStr[i])) === -1){
+      console.log('false')
+      return false;
+    } 
   }
-
-// console.log(mainStr)
-// console.log(testStr);
-
+  console.log('true')
+  return true;
 }
 
-mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])
+
+//Another way to solve it
+
+function mutation(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+  for (var i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
+  }
+  return true;
+}
+
+//And another
+
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) != -1;
+    });
+}
+
+// And yet another..
+
+function mutation([ target, test ], i = 0) {
+  target = target.toLowerCase();
+  test = test.toLowerCase();
+  return i >= test.length
+    ? true
+    : !target.includes(test[i])
+      ? false
+      : mutation([ target, test ], i + 1);
+}
+
+
+mutation(["hello", "hey"])
