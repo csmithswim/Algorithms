@@ -91,3 +91,29 @@ function getPerimeter(length, width) {
 
 //?Challenge 4
 
+let s = ['a','b','c','e','l','m','e','i','w','l'];
+
+function vowelsAndConsonants() {
+let vowels = '';
+let consonants = '';
+
+    for (let i = 0; i < s.length; i++) {
+
+        if (s[i] === 'a'&&'e'&&'i'&&'o'&&'u'){
+
+            vowels = s[i]
+
+            return i;
+
+        } else 
+
+    consonants += s[i]
+
+
+    }
+    console.log(vowels)
+    console.log(consonants)
+}
+
+
+vowelsAndConsonants(s)
