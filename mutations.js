@@ -14,10 +14,13 @@ mutation(["Tiger", "Zebra"]) should return false.
 mutation(["Noel", "Ole"]) should return true.
 
 */ 
-
 function mutation(arr) {
-    return arr;
+
+  arr[1] //This is the array we need to test against arr[0] to find matches
+
+  console.log(arr[0][str.indexOf('m')])
+
+// console.log(arr);
   }
   
-  mutation(["hello", "hey"]);
-  
+  mutation(["hello", "Hello"])
