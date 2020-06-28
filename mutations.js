@@ -15,12 +15,30 @@ mutation(["Noel", "Ole"]) should return true.
 
 */ 
 function mutation(arr) {
+let testStr = []
+let mainStr = [];
+  // arr[1] //This is the array we need to test against arr[0] to find matches
 
-  arr[1] //This is the array we need to test against arr[0] to find matches
+  for (let i = 0; i < arr[0].length; i++) {
+    
+    mainStr[i] = arr[0][i].toLowerCase();
+  }
 
-  console.log(arr[0][str.indexOf('m')])
+  for (let i = 0; i < arr[1].length; i++) {
 
-// console.log(arr);
+    testStr[i] = arr[1][i].toLowerCase()
   }
   
-  mutation(["hello", "Hello"])
+  for (let i = 0; i < mainStr.length; i++) {
+    
+    console.log(mainStr.indexOf(testStr[i], 0))
+    // console.log(mainStr)
+    // console.log(testStr[i])
+  }
+
+// console.log(mainStr)
+// console.log(testStr);
+
+}
+
+mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])
