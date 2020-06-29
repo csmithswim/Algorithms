@@ -9,17 +9,18 @@ chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3]
 */ 
 function chunkArrayInGroups(arr, size) {
     let finalArr = [];
-    for (let i = arr.length; i >  0; i--) {
 
-        
-        finalArr.unshift(arr.slice(i, size))
+    for (let i = 0; i < arr.length; i++) {
 
-       
+        finalArr.push(arr.slice(i, size))
+
+        i = size -1
+        size = size+size
         
     }
     console.log(finalArr)
     
     return finalArr;
 }  
-// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) 
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) 
 chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)
