@@ -14,14 +14,7 @@ function chunkArrayInGroups(arr, size) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
     
-    if (i > size){
-
-finalArr.pop(newArr)
-newArr[i] += arr[i]
-    }
-
-
-    finalArr[i] = arr[i]
+    finalArr[size] = arr[i]
 
     }
 
