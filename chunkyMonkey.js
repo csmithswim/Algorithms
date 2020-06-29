@@ -1,5 +1,4 @@
 /* Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
-
 chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]].
 chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]].
 chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) should return [[0, 1], [2, 3], [4, 5]].
@@ -7,20 +6,20 @@ chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) should return [[0, 1, 2, 3], [4, 5]].
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) should return [[0, 1, 2], [3, 4, 5], [6]].
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].
-
 */ 
 function chunkArrayInGroups(arr, size) {
     let finalArr = [];
-    let newArr = [];
+    for (let i = arr.length; i >  0; i--) {
 
-    for (let i = 0; i < size; i++) {
         
-        newArr.push(arr.slice(-size))
+        finalArr.unshift(arr.slice(i, size))
+
+       
         
     }
-    console.log(newArr)
+    console.log(finalArr)
     
-    return arr;
+    return finalArr;
 }  
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
-  
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) 
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)
