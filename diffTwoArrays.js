@@ -18,29 +18,36 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return an array.
 
 */ 
 //Use filter, includes, concat and a for loop.
-function diffArray(arr1, arr2) {
-    if (arr1.length > arr2.length){
 
-        newArrLength = arr1.length
+function diffArray(arr1, arr2) {   
+
+    var newArr = [];
+   
+    if (arr1.length > arr2.length){
+        
+    newArrLength = arr1.length
 
     } else newArrLength = arr2.length;
 
-    var newArr = [];
+        for (let i = 0; i < newArrLength; i++) {        
+        
+            if (!arr1.includes(arr2[i]) && arr2[i] != undefined) {
 
-    for (let i = 0; i < newArrLength; i++) {
+            newArr.push(arr2[i])
 
-    // console.log(arr1.includes(arr2[i]))
+            }
 
+            if (!arr2.includes(arr1[i]) && arr1[i] != undefined){
 
-    
-    
-    }
+            newArr.push(arr1[i])        
+            }  
 
+        }
 
+    console.log(newArr)
 
-
-    // return newArr;
-  }
+}
   
-  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-  
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])
+
+
