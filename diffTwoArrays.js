@@ -17,9 +17,14 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) should return an array.
 [1, "calf", 3, "piglet"], [7, "filly"] should return an array with six items.
 
 */ 
-
+//Use filter, includes, concat and a for loop.
 function diffArray(arr1, arr2) {
     var newArr = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+    }
+
     return newArr;
   }
   
