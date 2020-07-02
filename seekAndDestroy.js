@@ -7,12 +7,27 @@ destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
 destroyer([2, 3, 2, 3], 2, 3) should return [].
 destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"].
 destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65].
-
 */
 
+function destroyer(arr, ...nums) {
 
-function destroyer(arr) {
+  let finalArr = []
+
+    for (let i = 0; i < nums.length; i++) {
+       
+      if (nums.includes(arr[i])){
+
+        console.log('hi')
+      
+        // i = i - 1
+      }
+   }
+
+// console.log(arr)
+// console.log(nums)
+
 
   return arr;
-  
+
 }
+destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
