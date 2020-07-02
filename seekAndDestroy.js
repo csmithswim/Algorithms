@@ -13,17 +13,14 @@ function destroyer(arr, ...nums) {
 
   let finalArr = []
 
-    for (let i = 0; i < nums.length; i++) {
-       
-      if (nums.includes(arr[i])){
+    for (let i = 0; i < arr.length; i++) {
+      //  console.log(arr[i])
+      //  console.log(nums[i])
 
-        console.log('hi')
-      
-        // i = i - 1
-      }
-   }
+         }
 
-// console.log(arr)
+  console.log(test)
+console.log(arr)
 // console.log(nums)
 
 
