@@ -12,14 +12,39 @@ destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugat
 function destroyer(arr, ...nums) {
 
   let finalArr = []
+  let arrIndex = []
 
-    for (let i = 0; i < arr.length; i++) {
+  function testValues (arr){
+
+    for (let i = 0; arr > i;  i++) {
+
+      if (arr === nums){
+
+        console.log('hi')
+      }
+      
+    }
+
+  }
+
+
+    // for (let i = 0; i < arr.length; i++) {
+
+    // if (arr.includes)
+     
+    //  }
+     
+
+
+
       //  console.log(arr[i])
       //  console.log(nums[i])
 
-         }
 
-  console.log(test)
+
+        //  }
+
+  // console.log(test)
 console.log(arr)
 // console.log(nums)
 
@@ -27,4 +52,6 @@ console.log(arr)
   return arr;
 
 }
+console.log(arr.filter(testValues))
+
 destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
