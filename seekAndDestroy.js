@@ -9,49 +9,44 @@ destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"].
 destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65].
 */
 
-function destroyer(arr, ...nums) {
+// function destroyer(arr, ...nums) {
 
-  let finalArr = []
-  let arrIndex = []
+//   function testValues(arr){
 
-  function testValues (arr){
-
-    for (let i = 0; arr > i;  i++) {
-
-      if (arr === nums){
-
-        console.log('hi')
-      }
-      
-    }
-
-  }
+//   if arr < 10 {
 
 
-    // for (let i = 0; i < arr.length; i++) {
+//   }
+    
+    
+//   }
+ 
+// }
 
-    // if (arr.includes)
-     
-    //  }
-     
+//   const result = arr.filter(testValues)
 
+//   console.log(result)
 
+// }
 
-      //  console.log(arr[i])
-      //  console.log(nums[i])
-
-
-
-        //  }
-
-  // console.log(test)
-console.log(arr)
-// console.log(nums)
+// destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
 
 
-  return arr;
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item);
+  arr.shift();
+
+  return item;
+  // Only change code above this line
+  
 
 }
-console.log(arr.filter(testValues))
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
+// Setup
+var testArr = [1,2,3,4,5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
