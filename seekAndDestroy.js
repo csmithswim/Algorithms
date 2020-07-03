@@ -33,3 +33,39 @@ destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugat
 
 
 
+/*
+golfScore(4, 2) should return "Eagle"
+golfScore(5, 2) should return "Eagle"
+golfScore(4, 3) should return "Birdie"
+golfScore(4, 4) should return "Par"
+golfScore(1, 1) should return "Hole-in-one!"
+golfScore(5, 5) should return "Par"
+golfScore(4, 5) should return "Bogey"
+golfScore(4, 6) should return "Double Bogey"
+golfScore(4, 7) should return "Go Home!"
+golfScore(5, 9) should return "Go Home!"
+
+
+Strokes	Return
+1	"Hole-in-one!"
+<= par - 2	"Eagle"
+par - 1	"Birdie"
+par	"Par"
+par + 1	"Bogey"
+par + 2	"Double Bogey"
+>= par + 3	"Go Home!"
+
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+*/
+
+function golfScore(par, strokes) {
+  // Only change code below this line
+
+
+  return "Change Me";
+  // Only change code above this line
+}
+
+golfScore(5, 4);
+
+
