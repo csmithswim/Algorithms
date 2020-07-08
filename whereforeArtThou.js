@@ -4,16 +4,13 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 
 function whatIsInAName(collection, source) {
     var arr = [];
-    // Only change code below this line
-  
-  
-    // Only change code above this line
-    return arr;
-  }
-  
-  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
-  
 
+  ;
+
+}
+  
+  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],{first: 'Tybalt', last: "Capulet" });
+  
 /* 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
 whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
