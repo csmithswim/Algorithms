@@ -3,13 +3,23 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 */
 
 function whatIsInAName(collection, source) {
-    var arr = [];
 
-  ;
+console.log(source)
+console.log(collection[2])
+
+console.log(typeof collection)
+console.log(typeof source)
+
+console.log(collection.includes(source))
+console.log(collection[2] == source)
 
 }
+
+ 
+
+// }
   
-  whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],{first: 'Tybalt', last: "Capulet" });
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],{first: 'Tybalt', last: "Capulet" });
   
 /* 
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
