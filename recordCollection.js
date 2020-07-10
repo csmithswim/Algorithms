@@ -6,9 +6,6 @@ There are several rules for handling incomplete data:
 If prop is "tracks" but the album doesn't have a "tracks" property, create an empty array before adding the new value to the album's corresponding property.
 If prop is "tracks" and value isn't empty (""), push the value onto the end of the album's existing tracks array.
 If value is empty (""), delete the given prop property from the album.
-
-
-
 */ 
 
 // Setup
@@ -39,10 +36,26 @@ var collection = {
   };
   
   // Only change code below this line
+
+
   function updateRecords(id, prop, value) {
-  
+
+    if(value === "") delete collection[id][prop];
+
+    else if(prop === "tracks") {
+
+      collection[id][prop] = collection[id][prop] || [];
+
+      collection[id][prop].push(value);
+
+    } else {
+
+      collection[id][prop] = value;
+      
+    }
   
     return collection;
   }
+
   
-  updateRecords(5439, "artist", "ABBA");
+  updateRecords(5439, "tracks", "");
