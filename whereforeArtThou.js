@@ -4,20 +4,22 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 
 function whatIsInAName(collection, source) {
 
-console.log(source)
-console.log(collection[2])
+    for (key in collection) {
 
-console.log(typeof collection)
-console.log(typeof source)
+        for (var i = 0; i < collection.length; i++) {
 
-console.log(collection.includes(source))
-console.log(collection[2] == source)
+            for (var prop in source) {
 
+                if (collection[i].hasOwnProperty(prop) && collection[i][prop] === source[prop]) {
+                    
+                    arr.push(collection[i]);
+                }
+            }
+        }
+    }
 }
 
- 
 
-// }
   
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],{first: 'Tybalt', last: "Capulet" });
   
