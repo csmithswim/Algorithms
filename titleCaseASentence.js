@@ -5,37 +5,41 @@ function titleCase(str) {
 
   let newArr = str.split(" ");
 
-  let upperCase = []
-  let lowerCase = []
-  let finalStr = [];
+  let finalStr = ''
 
   for (let i = 0; i < newArr.length; i++) {
     
-    upperCase.push((newArr[i][0]).toUpperCase())
-
+    finalStr += newArr[i][0].toUpperCase()
+    finalStr += newArr[i].slice(1).toLowerCase()
+    finalStr += " "
   }
-
-  for (let i = 0; i < newArr.length; i++) {
-
-    lowerCase[i] = newArr[i].slice(1).toLowerCase()
-    
-  }
-
-  for (let i = 0; i < upperCase.length; i++) {
-
-    finalStr[i] = upperCase[i] + lowerCase[i];
-    
-  }
-
   
-  let fStr = finalStr.join(' ')
+  console.log(finalStr)
+  return finalStr;
 
-  console.log(fStr)
-
-  return str;
 }
 
-titleCase("I'm a little tea pot");
+  // for (let i = 0; i < newArr.length; i++) {
+
+  //   lowerCase[i] = newArr[i].slice(1).toLowerCase()
+    
+  // }
+
+  // for (let i = 0; i < upperCase.length; i++) {
+
+  //   finalStr[i] = upperCase[i] + lowerCase[i];
+    
+  // }
+
+  
+  // let fStr = finalStr.join(' ')
+
+  // console.log(fStr)
+
+  // return str;
+// }
+
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT");
 
 /* titleCase("I'm a little tea pot") should return a string.
 titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.
