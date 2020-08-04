@@ -7,7 +7,7 @@ function titleCase(str) {
 
   let upperCase = []
   let lowerCase = []
-  let finalStr = '';
+  let finalStr = [];
 
   for (let i = 0; i < newArr.length; i++) {
     
@@ -20,14 +20,17 @@ function titleCase(str) {
     lowerCase[i] = newArr[i].slice(1).toLowerCase()
     
   }
+
+  for (let i = 0; i < upperCase.length; i++) {
+
+    finalStr[i] = upperCase[i] + lowerCase[i];
+    
+  }
+
   
-  // console.log(finalStr.toUpperCase());
-  // console.log(upperCase)
-  // console.log(lowerCase)
+  let fStr = finalStr.join(' ')
 
-  let finalSentence = upperCase.concat(lowerCase)
-  console.log(finalSentence)
-
+  console.log(fStr)
 
   return str;
 }
