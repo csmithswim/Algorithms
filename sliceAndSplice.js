@@ -6,17 +6,17 @@
 
 function frankenSplice(arr1, arr2, n) {
 
-  for (let i = 0; i < arr1.length; i++) {
+  for (let i = arr1.length - 1; i >= 0; i--){
 
     arr2.splice(n, 0, arr1[i])
-
+        
   }
 
-  console.log(arr2)
-  return arr2;
+  console.log(arr2);
+
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+frankenSplice([1, 2, 3], [4, 5], 1);
 
 
 /*frankenSplice([1, 2, 3], [4, 5], 1) should return [4, 1, 2, 3, 5].
