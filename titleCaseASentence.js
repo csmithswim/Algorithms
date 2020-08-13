@@ -5,7 +5,7 @@ function titleCase(str) {
 
   let newArr = str.split(" ");
 
-  let finalStr = ''
+  let finalStr = '';
 
   for (let i = 0; i < newArr.length; i++) {
     
@@ -14,7 +14,8 @@ function titleCase(str) {
     finalStr += " "
   }
   
-  console.log(finalStr)
+  console.log(finalStr)  return finalStr.trim();
+
   return finalStr;
 
 }
