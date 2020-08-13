@@ -3,19 +3,58 @@ A prime number is a whole number greater than 1 with exactly two divisors: 1 and
 
 Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num. */
 
-function sumPrimes(num) {
+function sumPrimes(num){
+    
+    let finalNumber = 0;
 
-for (let i = num; i >= 0; i--) {
+    for (let i = 1; i <= num; i++){
+    
+    if (checkPrime(i) === true){
 
-    console.log(i)    
+        finalNumber += i
+    }
+
+    }
+
+    return finalnumber;
+
 }
 
 
-    return num;
-  }
+function checkPrime(num) {
+       
+    let finalNum = 0;
+
+    for (let i = num; i >= 0; i--){
+        // console.log(i)
+        // console.log(num)
+        if (num%(i) === 0){
+            finalNum += 1;
+            console.log(`divisible by `+ i)
+        }    
+        
+        // else if console.log(num + 'is prime')
+    }
+
+    if (finalNum === 2){
+    return true;
+
+    }
+
+// console.log(finalNum)
+
+}
+sumPrimes(10);
+
+
+
+console.log(Math.ceil(Math.sqrt(10)));
+
   
-  sumPrimes(10);
-  
-  /* sumPrimes(10) should return a number.
+/* sumPrimes(10) should return a number.
 sumPrimes(10) should return 17.
 sumPrimes(977) should return 73156. */
+
+// for (let j = num; j >= 0; j--){
+//     console.log(j)
+// }
