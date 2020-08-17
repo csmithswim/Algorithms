@@ -1,54 +1,35 @@
 /*
 A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself. For example, 2 is a prime number because it is only divisible by 1 and 2. In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
-
 Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num. */
+function sumPrimes(num) {       
+    let finalSum = 0;
 
-function sumPrimes(num){
-    
-    let finalNumber = 0;
-
-    for (let i = 1; i <= num; i++){
-    
-    if (checkPrime(i) === true){
-
-        finalNumber += i
+    for (let j = 0; j < num; j++) {
+           
+        let finalNum = 0;  
+        for (let i = j; i >= 0; i--){
+            console.log(i)
+            console.log(j)
+            if (j%(i) === 0){
+                finalNum += 1;
+                // console.log(`divisible by `+ i)
+            }                
+            // else if console.log(num + 'is prime')    
+        }
+        if (finalNum === 2){
+            finalSum += num
+            console.log(num +' is prime')      
+        }
+        // console.log(finalNum)
+        // console.log(finalSum)
     }
-
-    }
-
-    return finalnumber;
-
-}
-
-
-function checkPrime(num) {
-       
-    let finalNum = 0;
-
-    for (let i = num; i >= 0; i--){
-        // console.log(i)
-        // console.log(num)
-        if (num%(i) === 0){
-            finalNum += 1;
-            console.log(`divisible by `+ i)
-        }    
-        
-        // else if console.log(num + 'is prime')
-    }
-
-    if (finalNum === 2){
-    return true;
-
-    }
-
-// console.log(finalNum)
-
+// console.log(finalSum)
 }
 sumPrimes(10);
 
 
 
-console.log(Math.ceil(Math.sqrt(10)));
+// console.log(Math.ceil(Math.sqrt(10)));
 
   
 /* sumPrimes(10) should return a number.
