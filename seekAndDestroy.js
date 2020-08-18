@@ -4,40 +4,29 @@ Note
 You have to use the arguments object. */
 
 
-function destroyer(...arr) {
+function destroyer(arr,...nums) {
 
-    let newArray1 = arr[0].slice(0,arr[0].length)
-    let newArray2 = arr.slice(1,arr.length)
-    let finalArray = [];
+    const loopLength = arr.length;   
 
-    for (let i = 0; i < newArray.length; i++) {
+    for (let i = 0; i <= loopLength; i++){
 
-        // console.log(newArray[i])
-        // console.log(arr[i])
+        if (arr.includes(nums[i])){
 
+            arr.splice(arr.indexOf(nums[i]), 1)
 
-      if (newArray[i] !== arr[i]){
-
-        console.log(newArray[i])
-        console.log(arr[i])
-
-        finalArray.push(newArray[i])        
-      }        
-
+            i = i - 1        
+        }
     }
 
-        console.log(newArray2)
+    console.log(arr)
+
 }
+
+
   
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
- //   } else {
-    
-
-    //   }
-  
-
-  /*destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1].
+/*destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1].
 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1].
 destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
 destroyer([2, 3, 2, 3], 2, 3) should return [].
