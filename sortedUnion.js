@@ -5,23 +5,37 @@ Check the assertion tests for examples.
 
 */
 
-function uniteUnique(arr,...arrs) {
+function uniteUnique(...arr) {  
+let newArray = arr.slice(0,arr.length)
+newArray.sort(function(a,b){return b.length-a.length})
 
-  for (let i = 0; i <= 2; i++) {
+for (let i = 1; i < arr.length; i++) {
 
-    console.log(arr[i])
+  for (let j = 0; j < newArray[0].length; j++) {
 
-    for (let j = 0; j < arrs[0].length; j++) {
+  if (!arr[0].includes(arr[i][j]) && arr[i][j] != undefined){
 
-      console.log(arrs[i][j])
-      
-    }
+arr[0].push((arr[i][j]))
 
   }
 
+
+
+  // console.log(arr[i][j])    
+    
+  }
+
+  // console.log(i)
+  
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);  /*
+// console.log (newArray)
+console.log(arr[0])
+return arr[0]
+
+}
+
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);  /*
 should return [1, 3, 2, 5, 4].
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) 
