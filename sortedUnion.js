@@ -5,14 +5,26 @@ Check the assertion tests for examples.
 
 */
 
-function uniteUnique(arr) {
-    return arr;
-  }
-  
+function uniteUnique(arr,...arrs) {
 
-/*
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);  
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) should return [1, 3, 2, 5, 4].
+  for (let i = 0; i <= 2; i++) {
+
+    console.log(arr[i])
+
+    for (let j = 0; j < arrs[0].length; j++) {
+
+      console.log(arrs[i][j])
+      
+    }
+
+  }
+
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);  /*
+should return [1, 3, 2, 5, 4].
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) 
 uniteUnique([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5].
 uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
 */
