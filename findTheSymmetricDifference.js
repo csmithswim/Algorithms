@@ -1,31 +1,40 @@
 /* The mathematical term symmetric difference (△ or ⊕) of two sets is the set of elements which are in either of the two sets but not in both. For example, for sets A = {1, 2, 3} and B = {2, 3, 4}, A △ B = {1, 4}.
-
 Symmetric difference is a binary operation, which means it operates on only two elements. So to evaluate an expression involving symmetric differences among three elements (A △ B △ C), you must complete one operation at a time. Thus, for sets A and B above, and C = {2, 3}, A △ B △ C = (A △ B) △ C = {1, 4} △ {2, 3} = {1, 2, 3, 4}.
-
 Create a function that takes two or more arrays and returns an array of their symmetric difference. The returned array must contain only unique values (no duplicates). */
 function sym(...args) {
 
-    let newArgs = args.slice(0,args.length);
+    let newTest;
 
-    let loopLength = newArgs.sort(function(a,b){return b.length-a.length})[0].length;
+    let newArgs = args.slice(0,args.length).sort(function(a,b){return b.length-a.length});
 
-    for (let i = 0; i < args.length; i++) {
+    testArgArray = newArgs.slice(0,1).reduce((sum, elem) => sum + elem)
 
-        for (let j = 0; j < loopLength; j++) {
+    // newTest = testArgArray.reduce((sum, elem) => sum + elem)
 
-            console.log(newArgs[i][j])
+    // let sum = sample.reduce((sum, elem) => sum + elem) //Reduce, sum is last value returned
 
-            // if (newArgs[i].indexOf(newArgs[i+1][j])  == -1 && args[i].indexOf(newArgs[i][j] != undefined)){
 
-            // console.log(newArgs[i+1][j])
-          
-            // } 
+    for (let i = 1; i <= newArgs.length-1; i++) {
+
+        // console.log(newArgs.length)
+
+        for (let j = 0; j < newArgs[i].length; j++) {
+
+            // console.log(newArgs[i][j])
+
+            if (!testArgArray.includes(newArgs[i][j])){
+
+                testArgArray.push(newArgs[i][j])
+            }
         }
-    
     }
 
-    // console.log(newArgs)
-    // console.log(args)
+    let finalArray = [];
+
+  
+// console.log(args)
+console.log(testArgArray)
+
 }
   
 sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]);
@@ -46,31 +55,5 @@ sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]) should contain only 
 sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]) should return [1, 2, 4, 5, 6, 7, 8, 9].
 sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]) should contain only eight elements. 
 
-    let finalArray;
-    let testArray;
-
-    finalArray = args.reduce(function(arrA, arrB){
-
-        return arrA.concat(arrB)
-    })
-
-   testArray = finalArray.slice(0,finalArray.length)
-
-   for (let i = 0; i < finalArray.length; i++) {
-
-
-       
-   }
-
-
-
-console.log(testArray)
-console.log(finalArray)
-
-
-    return args; */
-
-
-
-
+ */
 
