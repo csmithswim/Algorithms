@@ -1,29 +1,61 @@
-const fs = require("fs");
+const http = require('http');
+const fs = require('fs')
 
-function read(file, callback) {
-    fs.readFile(file, 'utf8', function(err, data) {
-        if (err) {
-            console.log(err);
-        }
-        callback(data);
-    });
-}
-
-// let states;
-var output = read('dataParser.txt', function(data) {
-
-// states = data
-//    console.log(data);
-});
-
-
-console.log(states)
-
-
-// let newArray = [[]];
-// for (let i = 0; i < output.length; i++) {
-
-//     newArray[i] == output[i]
+    let array = [];
     
+    let demo = fs.readFileSync("dataParser.txt", "utf8", (err, data) => {
+        if (err) throw err;
+                return(data);
+    });
+
+    demo = demo.split(`\r\n`);
+    // console.log(demo)
+
+    for (let i = 0; i < demo.length; i++) {
+
+        array.splice(i, demo[i])     
+
+      
+    }
+
+    console.log(array)
+
+
+// const fs = require("fs");
+
+// fs.readFile(file, function(err, data) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         callback(data);
+// });
+
+// const rawData = fs.readFileSync(textFile, 'utf8');
+
+// const parsedData = JSON.parse(rawData);
+
+
+
+// function read(file, callback) {
+//     fs.readFile(file, 'utf8', function(err, data) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         callback(data);
+//     });
 // }
-// console.log(newArray);
+
+// var output = read('dataParser.txt', function(data) {
+
+//    let  array = data.toString().split('\n');
+
+    
+
+// console.log(array);
+// });
+
+// console.log(array)
+
+
+
+
