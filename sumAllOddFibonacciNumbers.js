@@ -2,7 +2,35 @@
 For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5. */ 
 
 function sumFibs(num) {
-   let fib = [1];
+let fib = [1,1];
+let finalFib = 0;
+
+    for (let i = 2; i < num; i++) {
+
+        fib.push(fib[i-2]+fib[i-1])        
+    }
+
+    for (let i = 0; i <= fib.length && fib[i] <= num; i++) {
+
+        if ((fib[i] - 1) % 2 == 0){
+
+            finalFib += (fib[i]);
+        }         
+    }
+
+return finalFib;
+  
+}
+  
+sumFibs(4) 
+/*should return 5.
+sumFibs(1) should return a number.
+sumFibs(4000000) should return 4613732.
+sumFibs(4) 
+sumFibs(75024) should return 60696.
+sumFibs(75025) should return 135721.
+
+ let fib = [1];
    let finalFib=0;
     for (let i = 1; i < num; i++) {
      
@@ -33,17 +61,6 @@ function sumFibs(num) {
     // console.log(finalFib);
    
     return finalFib;
-}
-  
-// sumFibs(4);
-sumFibs(4) 
-/* should return 1785.
 
 
-
-
-sumFibs(1) should return a number.
-sumFibs(4000000) should return 4613732.
-sumFibs(4) should return 5.
-sumFibs(75024) should return 60696.
-sumFibs(75025) should return 135721. */
+*/
