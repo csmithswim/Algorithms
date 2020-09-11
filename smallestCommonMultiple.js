@@ -37,10 +37,12 @@ function smallestCommons(arr) {
         }         
     
         testArray.push(array) 
-        if (testArray[testArray.length-1].length >= (arr[0]-arr[1])){       
+        // console.log(testArray[testArray.length-1].length)
+        // console.log(arr[0]-arr[1])
+        if (testArray[testArray.length-1].length > (arr[1]-arr[0])){       
           
-        console.log(testArray[testArray.length-1]);
-        return testArray;
+        console.log(testArray[testArray.length-1][0]);
+        return testArray[testArray.length-1][0];
         }
 
         // console.log(testArray[testArray.length-1])
@@ -66,7 +68,7 @@ function smallestCommons(arr) {
 }
 
 
-smallestCommons([2, 10]);
+smallestCommons([1, 13]);
   
 
 /*
