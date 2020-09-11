@@ -27,27 +27,32 @@ function smallestCommons(arr) {
 //iterate through the factorial to see if it is divisible by the range of numbers from the first parameter to the last parameter
   let testArray=[];
   let lowestMultiple=[];
-  for (let i = arr[0]; i < loop; i++) {        
+  for (let i = arr[1]; i < loop; i++) {        
     
         let array=[];        
         for (let j = 0; j <= newArray.length; j++) {    
           if (i % newArray[j] == 0  && newArray[j] != 1){
             array.push(i)
           }
+        }         
+    
+        testArray.push(array) 
+        if (testArray[testArray.length-1].length >= (arr[0]-arr[1])){       
+          
+        console.log(testArray[testArray.length-1]);
+        return testArray;
         }
 
-        if (array.length >= (arr[0]-arr[1])){
+        // console.log(testArray[testArray.length-1])
 
-          
-          
-          console.log(lowestMultiple);
-          return lowestMultiple;
-        }
-        else {testArray.push(array) 
-            }      
+        // console.log(testArray[0])
+
+                  
   }
 
-  testArray.sort(function(a,b){return a.length-b.length});
+
+
+  // testArray.sort(function(a,b){return a.length-b.length});
 
 
 
