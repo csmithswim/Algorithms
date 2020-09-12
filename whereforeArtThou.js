@@ -2,17 +2,51 @@
 For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], and the second argument is { last: "Capulet" }, then you must return the third object from the array (the first argument), because it contains the name and its value, that was passed on as the second argument.
 */
 function whatIsInAName(collection, source) {
+    //Variable to collect the collection & source matches
     let newCollection;
 
+    //Entry length declaration
+    let sourceLength = Object.entries(source).length;
+
+    //Loops to iterate through collection to compare source entries
+    // console.log(collection[0])
+
+    for (let i = 0; i < collection.length; i++) {
+
+        // console.log(collection[i])
+        for (let j = 0; j < sourceLength; j++) {
+
+            console.log(collection[i])
+
+            console.log(Object.values(collection[i]))
+
+            console.log(Object.keys(source)[j])
+
+
+            console.log(collection[i].hasOwnProperty(Object.keys(source)[j]))
+
+
+            if (collection[i].hasOwnProperty(Object.entries(source))){
+
+                console.log(Object.entries(source)[j])
+            }
+
+            
+        }
+        
+    }
+
+
+
+
+
     // console.log(source.hasOwnProperty(Object.keys(source)[0]));
-    console.log(Object.entries(source).length-1)
-    console.log(source.length)
 
     // console.log(Object.entries(source))
     // console.log(Object.keys(source))
     // console.log(Object.values(source))
 
-    newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
+    //newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
 
 
     // console.log(newCollection)
