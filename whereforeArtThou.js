@@ -4,14 +4,18 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 function whatIsInAName(collection, source) {
     let newCollection;
 
-    console.log(source.hasOwnProperty('apple'))
+    // console.log(source.hasOwnProperty(Object.keys(source)[0]));
+    console.log(Object.entries(source).length-1)
+    console.log(source.length)
 
-    console.log(source)
+    // console.log(Object.entries(source))
+    // console.log(Object.keys(source))
+    // console.log(Object.values(source))
 
-    newCollection = collection.filter(i => i.hasOwnProperty('apple'))
+    newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
 
 
-    console.log(newCollection)
+    // console.log(newCollection)
     
     return newCollection;
 
@@ -19,5 +23,12 @@ function whatIsInAName(collection, source) {
 }
   
 whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }); 
+/* should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]. */
 
-[{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]
+
+/*
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
+whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) 
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
+whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}) should return [] */
