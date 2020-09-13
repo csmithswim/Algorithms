@@ -8,50 +8,54 @@ function whatIsInAName(collection, source) {
     let sourceLength = Object.entries(source).length;
 
     //Push the values of the collection objects into an array of arrays
-    let array = [];
+    let keyArray = [];
+    let valueArray = [];
     for (let i = 0; i < collection.length; i++) {
-        array.push(Object.values(collection[i]))        
+        keyArray.push(Object.keys(collection[i]))        
+        valueArray.push(Object.values(collection[i]))
     }
+    // console.log(collection)+console.log('\n');
+    // console.log(keyArray)+console.log('\n');
+    // console.log(valueArray)+console.log('\n');
+    // console.log(source)+console.log('\n');
+
+    // console.log(sourceLength)
     //Loops to iterate through collection to compare source entries
     for (let i = 0; i < collection.length; i++) {
-        // console.log(collection[i])
-        for (let j = 0; j < sourceLength; j++) {
-            console.log(collection[i])
-            console.log(Object.keys(source)[j])
-            console.log(collection[i].hasOwnProperty(Object.keys(source)[j]))
+        for (let j = 0; j <= sourceLength; j++) {
+            // console.log(collection[i])
+            // console.log(Object.keys(source))
+            // console.log(collection[i].hasOwnProperty(Object.keys(source)))  
+            // console.log((collection[i][Object.keys(source)] == Object.values(source)))
+            if (collection[i].hasOwnProperty(Object.keys(source)) && collection[i][Object.keys(source)] == Object.values(source)){
 
-            console.log(collection[i])
-            console.log(array[i][j])
-            console.log(Object.values(source)[j])
-            // console.log(collection[i].hasOwnProperty(Object.keys(source)[j]))
+                console.log(collection[i])
+            }
+            // console.log(collection[i][Object.keys(source)])
 
-
-
-
-
-            // if (collection[i].hasOwnProperty(Object.entries(source))){
-            //     console.log(Object.entries(source)[j])
-            // }            
+            // console.log(Object.values(collection[i]))  
+            // console.log(Object.values(source))      
+            // console.log(Object.values(collection[i]).hasOwnProperty(Object.values(source)))  
+    
         }        
     }
 }
   
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) 
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) 
 
 /* should return [{ first: "Tybalt", last: "Capulet" }] */
 
 
 /*
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
-whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) 
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
-whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}) should return [] */
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) 
+should return [{ first: "Tybalt", last: "Capulet" }].
 
-  // console.log(source.hasOwnProperty(Object.keys(source)[0]));
-    // console.log(Object.entries(source))
-    // console.log(Object.keys(source))
-    // console.log(Object.values(source))
-    //newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
-    // console.log(newCollection)
-    // return newCollection;
+whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) 
+should return [{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }].
+
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) 
+should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
+
+whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}) 
+should return [] */
+
