@@ -4,60 +4,41 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 function whatIsInAName(collection, source) {
     //Variable to collect the collection & source matches
     let newCollection;
-
     //Entry length declaration
     let sourceLength = Object.entries(source).length;
 
-    //Loops to iterate through collection to compare source entries
-    // console.log(collection[0])
-
+    //Push the values of the collection objects into an array of arrays
+    let array = [];
     for (let i = 0; i < collection.length; i++) {
-
+        array.push(Object.values(collection[i]))        
+    }
+    //Loops to iterate through collection to compare source entries
+    for (let i = 0; i < collection.length; i++) {
         // console.log(collection[i])
         for (let j = 0; j < sourceLength; j++) {
-
             console.log(collection[i])
-
-            console.log(Object.values(collection[i]))
-
             console.log(Object.keys(source)[j])
-
-
             console.log(collection[i].hasOwnProperty(Object.keys(source)[j]))
 
+            console.log(collection[i])
+            console.log(array[i][j])
+            console.log(Object.values(source)[j])
+            // console.log(collection[i].hasOwnProperty(Object.keys(source)[j]))
 
-            if (collection[i].hasOwnProperty(Object.entries(source))){
 
-                console.log(Object.entries(source)[j])
-            }
 
-            
-        }
-        
+
+
+            // if (collection[i].hasOwnProperty(Object.entries(source))){
+            //     console.log(Object.entries(source)[j])
+            // }            
+        }        
     }
-
-
-
-
-
-    // console.log(source.hasOwnProperty(Object.keys(source)[0]));
-
-    // console.log(Object.entries(source))
-    // console.log(Object.keys(source))
-    // console.log(Object.values(source))
-
-    //newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
-
-
-    // console.log(newCollection)
-    
-    return newCollection;
-
-
 }
   
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }); 
-/* should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }]. */
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) 
+
+/* should return [{ first: "Tybalt", last: "Capulet" }] */
 
 
 /*
@@ -66,3 +47,11 @@ whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "app
 whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) 
 whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) should return [{ "apple": 1, "bat": 2 }, { "apple": 1, "bat": 2, "cookie":2 }].
 whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}) should return [] */
+
+  // console.log(source.hasOwnProperty(Object.keys(source)[0]));
+    // console.log(Object.entries(source))
+    // console.log(Object.keys(source))
+    // console.log(Object.values(source))
+    //newCollection = collection.filter(i => i.hasOwnProperty(Object.keys(source)[0]) && i.hasOwnProperty(Object.keys(source)[1]))
+    // console.log(newCollection)
+    // return newCollection;
