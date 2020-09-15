@@ -3,9 +3,13 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 */
 function whatIsInAName(collection, source) {
     //Variable to collect the collection & source matches
+    let finalArray = [];
     let newCollection;
     //Entry length declaration
+
     let sourceLength = Object.entries(source).length;
+
+    // console.log(sourceLength)
 
     //Push the values of the collection objects into an array of arrays
     let keyArray = [];
@@ -22,15 +26,20 @@ function whatIsInAName(collection, source) {
     // console.log(sourceLength)
     //Loops to iterate through collection to compare source entries
     for (let i = 0; i < collection.length; i++) {
-        for (let j = 0; j <= sourceLength; j++) {
+        for (let j = 0; j <= sourceLength-1; j++) {
             // console.log(collection[i])
             // console.log(Object.keys(source))
+
             // console.log(collection[i].hasOwnProperty(Object.keys(source)))  
+
             // console.log((collection[i][Object.keys(source)] == Object.values(source)))
+
             if (collection[i].hasOwnProperty(Object.keys(source)) && collection[i][Object.keys(source)] == Object.values(source)){
 
                 console.log(collection[i])
+                finalArray.push(collection[i])
             }
+
             // console.log(collection[i][Object.keys(source)])
 
             // console.log(Object.values(collection[i]))  
@@ -39,15 +48,17 @@ function whatIsInAName(collection, source) {
     
         }        
     }
+
+    console.log(finalArray)
+    return finalArray;
 }
   
-whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 }) 
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) 
 
 /* should return [{ first: "Tybalt", last: "Capulet" }] */
 
 
 /*
-whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) 
 should return [{ first: "Tybalt", last: "Capulet" }].
 
 whatIsInAName([{ "apple": 1 }, { "apple": 1 }, { "apple": 1, "bat": 2 }], { "apple": 1 }) 
