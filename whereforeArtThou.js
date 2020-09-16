@@ -3,7 +3,7 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 */
 function whatIsInAName(collection, source) {
     let sourceProp =  Object.keys(source);
-    let x=0;
+    let counter=0;
     let result = [];
     
     for (var j=0; j<collection.length;j++) {
@@ -14,12 +14,12 @@ function whatIsInAName(collection, source) {
       
             x++;
         }     
-    }
+      }
     // check if the all keys exist with their values
     if (x==sourceProp.length ) {
       result.push(collection[j]);
     }
-    x=0;
+    counter=0;
     }  
     console.log(result)
     return result;
