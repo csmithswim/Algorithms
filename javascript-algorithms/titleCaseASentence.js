@@ -14,7 +14,8 @@ function titleCase(str) {
     finalStr += " "
   }
   
-  console.log(finalStr)  return finalStr.trim();
+  console.log(finalStr)  
+  return finalStr.trim();
 
   return finalStr;
 

@@ -6,6 +6,8 @@ You have to use the arguments object. */
 
 function destroyer(arr,...nums) {
 
+    // console.log(arr)
+
     const loopLength = arr.length;   
 
     for (let i = 0; i <= loopLength; i++){
@@ -18,7 +20,7 @@ function destroyer(arr,...nums) {
         }
     }
 
-    console.log(arr)
+console.log(arr)
 
 }
 

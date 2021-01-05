@@ -17,7 +17,7 @@ for (let i = 1; i < arr.length; i++) {
 
 arr[0].push((arr[i][j]))
 
-  }
+}
 
 
 

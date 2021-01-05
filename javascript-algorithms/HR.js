@@ -89,6 +89,16 @@ function getPerimeter(length, width) {
     return perimeter;
 }
 //?Challenge 4
+
+/*Complete the vowelsAndConsonants function in the editor below. It has one parameter, a string,
+
+, consisting of lowercase English alphabetic letters (i.e., a through z). The function must do the following:
+
+    First, print each vowel in on a new line. The English vowels are a, e, i, o, and u, and each vowel must be printed in the same order as it appeared in
+.
+Second, print each consonant (i.e., non-vowel) in
+on a new line in the same order as it appeared in . */
+
 function vowelsAndConsonants(s) 
 {
     var vowels = ['a', 'e', 'i', 'o', 'u']
@@ -110,13 +120,21 @@ function vowelsAndConsonants(s)
     
 }
 
+//?Challenege 5
+/* Complete the getLetter(s), it takes one parameter a string s consisting of lowercase english alphabetic letters. It must return A, B,C, or D depending on the following criteria:
+
+If the first character in string s is in the set {a,e,i,o,u}, then return A.
+If the first character in string s is in the set {b,c,d,f,g}, then return B.
+If the first character in string s is in the set {h,j,k,l,m}, then return C.
+If the first character in string s is in the set {n,p,q,r,s,t,v,w,x,y,z}, then return D.
+Hint: you can get the letter at some index i in s using the syntax s[i].
+*/
+
 function getLetter(s) {
     let letter;
-    // Write your code here
-    
-    switch (s.charAt(0))
+      switch (s.charAt(0))
         {
-            case ( 'a' || 'e' || 'o' || 'i' || u):
+            case ( 'a' || 'e' || 'o' || 'i' || 'u'):
                 letter = 'A';
                 break;
                 
@@ -137,7 +155,17 @@ function getLetter(s) {
     return letter;
 }
 
+//*? Challenge 6
+/*  Return a grade given the following rubric. The getGrade(score) has one parameter, an integer score. 
 
+if 25 < score <= 30, then grade = A.
+if 20 < score <= 25, then grade = B.
+if 15 < score <= 20, then grade = C.
+if 10 < score <= 15, then grade = D.
+if 5 < score <= 10, then grade = E.
+if 0 < score <= 5, then grade = F.
+
+*/
 function getGrade(score)
 {
     let grade;
@@ -176,11 +204,14 @@ function getGrade(score)
     return grade;
 }
 
-/**
-*   Return the second largest number in the array.
-*   @param {Number[]} nums - An array of numbers.
-*   @return {Number} The second largest number in the array.
-**/
+
+//*? Challenge 7
+
+/*
+Complete the getSecondLargest function, it has one parameter: an array, nums, of n numbers. The function must find and return the second largest number in nums.
+
+*/
+
 function getSecondLargest(nums) {
     // Complete the function
     var sorted_array = nums.sort(function (a,b) {return a - b;});
@@ -191,12 +222,13 @@ function getSecondLargest(nums) {
     return unique_sorted_array[unique_sorted_array.length - 2];
 }
 
+//? Challenge 8 
 
-/*
- * Complete the isPositive function.
- * If 'a' is positive, return "YES".
- * If 'a' is 0, throw an Error with the message "Zero Error"
- * If 'a' is negative, throw an Error with the message "Negative Error"
+/* 
+Complete the isPositive function below. It has one integer parameter, a. If the value of a is positive, it must return the string Yes. Otherwise, it must throw an error according to the following rulels:
+if a is -, throw an Error with message = Zero Error.
+if a is negative, throw an Error with message = Negative Error.
+
  */
 function isPositive(a) {
     if (a > 0)
@@ -213,10 +245,15 @@ function isPositive(a) {
         }
 }
 
+//?Challenege 9
 /*
- * Complete the reverseString function
- * Use console.log() to print to stdout.
+Complete the reverseString function; it has one parameter, s. 
+1. Try to reverse string s using the split, reverse, and join methods.
+2. If an exception is thrown, catch it and print the contents of the exception's message on a new line.
+3.Print s on a new line. If no exception was thrown, then this should be the reversed string: if an exception was thrown, this should be the original string.
  */
+
+
 function reverseString(s) {
     try {
         var splitString = s.split("");
@@ -234,29 +271,29 @@ function reverseString(s) {
     
 }
 
+//? Challenge 10
 /*
- * Implement a Polygon class with the following properties:
- * 1. A constructor that takes an array of integer side lengths.
- * 2. A 'perimeter' method that returns the sum of the Polygon's side lengths.
+Complete the function in the editor. It has two parameters: a and b. It must return an object modeling a rectangle that has the following properties:
+length: the value is equal to a.
+width: this value is equal to b
+perimeter: this value is equal to 2 * (a+b)
+area: this value is equal to a * b
+Note: the names of the objects's properties must be spelled correctly to pass.
+
  */
-class Polygon {
-    constructor(heights) 
-    {
-        var polygon_perimeter = 0;
-        for (var index in heights)
-            {
-                polygon_perimeter += heights[index];
-            }
-        
-        this.my_perimeter = polygon_perimeter;
-    }
-    
-     perimeter() 
-    {
-        return this.my_perimeter;
-    }
-    
+function Rectangle(a, b) {
+    this.length = a;
+    this.width = b;
+    this.perimeter = 2 * (a+b);
+    this.area = a * b;
 }
+
+//? Challenege 11
+
+/*
+Complete the function in the editor. It has one parameter: an array, a, of objects. Each object in the array has two integer properties denoted by x and y. The function must return a count of all such objects o in array a that satisfy o.x == o.y.
+
+*/
 
 function getCount(objects) {
     var count = 0;
@@ -270,28 +307,12 @@ function getCount(objects) {
     return count;
 }
 
+//? Challenge 12
+
 /*
-*	Return the largest value of any a & b < k in S (where a < b).
-* 	
-*	n: Set S is a sequence of distinct integers from 1 to n (i.e., {1, 2, ..., n}).
-*	k: An integer.
+Given a date string, dateString, in the format MM/DD/YYYY, find and return the day name of that date. Each day name must be one of the following strings: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, or Saturday. For example, the day name for the date 12/07/2016 is 
+
 */
-function getMaxLessThanK(n, k) {
-    let maximum = 0;
-    let current = -1;
-    for (let i = 1; i < n; i++) 
-    {
-        for (let j = i + 1; j <= n; j++) 
-        {
-            current = i & j;
-            if (current < k && current > maximum) 
-            {
-                maximum = current;
-            }
-        }
-    }
-    return maximum;
-}
 
 function getDayName(dateString) {
     let dayName;
@@ -305,16 +326,3 @@ function getDayName(dateString) {
     return dayName;
 }
 
-function regexVar() {
-    /*
-     * Declare a RegExp object variable named 're'
-     * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
-     */
-    
-    var re = RegExp(/^([aeiou]).*\1$/);
-    
-    /*
-     * Do not remove the return statement
-     */
-    return re;
-}

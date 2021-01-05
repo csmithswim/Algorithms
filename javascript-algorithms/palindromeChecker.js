@@ -13,8 +13,8 @@ We'll also pass strings with special symbols, such as "2A3*3a2", "2A3 3a2", and 
 
 function palindrome(str) {
 
-    //\s+
-    console.log(str.replace(/[^\s+]/, ""))
+    let regex = /[\s+]/g
+    str.replace(regex, "")
     
 
     return console.log(str);

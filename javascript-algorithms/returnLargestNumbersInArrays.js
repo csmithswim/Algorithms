@@ -14,6 +14,7 @@ function largestOfFour(arr) {
         finalArr[i] = newArr[i][0];   
 
             }
+            console.log(finalArr)
             return finalArr;
 }
   

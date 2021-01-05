@@ -10,8 +10,11 @@ function smallestCommons(arr) {
   let minNum = arr[0];
 
   let lcm = maxNum;
-  // console.log(maxNum-1)
-  // console.log(minNum)
+  // console.log('maxNum is :' +  arr)
+  // console.log(minNum).
+
+  let obj = {name: 'cullen', dog: 'blanche'}
+  console.log('this is my info \n' , obj)
 
   for (let i = maxNum - 1; i >= minNum; i--) {    
 
@@ -24,7 +27,7 @@ function smallestCommons(arr) {
     }    
     
   }
-  console.log(lcm) 
+  // console.log(lcm) 
   return lcm;
 }
 smallestCommons([23,18]);

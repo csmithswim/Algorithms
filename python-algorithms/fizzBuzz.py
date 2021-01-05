@@ -7,7 +7,7 @@
 
 
 def fizzBuzz():
-    num=int(input("Input number to convert to Fizz/Buzz/FizzBuzz \n"))
+    num=int(input("Input number to convert to Fizz/Buzz/FizzBuzz or type \'quit\' to end program\n"))
     finalMessage=''
     if num % 3 == 0 :
         finalMessage += 'Fizz'

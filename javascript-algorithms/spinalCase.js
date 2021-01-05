@@ -15,36 +15,38 @@ function spinalCase(str) {
   var regex = /\s+|_+/g;
 
   // Replace low-upper case to low-space-uppercase
-  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  // str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
 
   // Replace space and underscore with -
   return str.replace(regex, "-").toLowerCase();
 }
 
-function spinalCase(str) {
-  // Replace low-upper case to low-space-uppercase
-  str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
-  // Split on whitespace and underscores and join with dash
-  return str
-    .toLowerCase()
-    .split(/(?:_| )+/)
-    .join("-");
-}
+ 
+// console.log(spinalCase('AllThe-small Things'));
+console.log(spinalCase('thisIsSpinalTap'));
+// console.log(spinalCase('This Is Spinal Tap'));
+// console.log(spinalCase('The_Andy_Griffith_Show'));
+// console.log(spinalCase('Teletubbies say Eh-oh'));
+
+
+// function spinalCase(str) {
+//   // Replace low-upper case to low-space-uppercase
+//   str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+//   // Split on whitespace and underscores and join with dash
+//   return str
+//     .toLowerCase()
+//     .split(/(?:_| )+/)
+//     .join("-");
+// }
 
 spinalCase("This Is Spinal Tap");
 
-function spinalCase(str) {
+// function spinalCase(str) {
 
-  return str
-    .split(/\s|_|(?=[A-Z])/)
-    .join("-")
-    .toLowerCase();
-}
+//   return str
+//     .split(/\s|_|(?=[A-Z])/)
+//     .join("-")
+//     .toLowerCase();
+// }
 
- 
-console.log(spinalCase('AllThe-small Things'));
-console.log(spinalCase('thisIsSpinalTap'));
-console.log(spinalCase('This Is Spinal Tap'));
-console.log(spinalCase('The_Andy_Griffith_Show'));
-console.log(spinalCase('Teletubbies say Eh-oh'));
 
