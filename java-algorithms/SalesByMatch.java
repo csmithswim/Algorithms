@@ -23,4 +23,18 @@ public class SalesByMatch {
         }
         return unsortedSocks;
     }
+    //done with one pass
+    Set<Integer> colors = new HashSet<>();
+    int pairs = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (!colors.contains(c[i])) {
+            colors.add(c[i]);
+        } else {
+            pairs++;
+            colors.remove(c[i]);
+        }
+    }
+
+    System.out.println(pairs);
 }
