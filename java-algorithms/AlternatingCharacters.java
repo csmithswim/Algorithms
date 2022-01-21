@@ -14,7 +14,6 @@ public class AlternatingCharacters {
 
         int count = 0;
         for (int i = string.length() - 1; i > 0; i--) {
-            System.out.println(string.charAt(i));
             if (string.charAt(i) == string.charAt(i - 1)) {
                 string.deleteCharAt(i);
                 count++;
