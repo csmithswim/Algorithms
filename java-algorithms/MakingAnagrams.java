@@ -5,53 +5,42 @@ import java.util.Map;
 
 public class MakingAnagrams {
 
-    public static int makeAnagram(String a, String b) {
-        Map<String, Integer> mapA = new HashMap<>();
-        Map<String, Integer> mapB = new HashMap<>();
+    public static int numberNeeded() {
+        String first = "aedfcgh";
+        String second = "aedfcgh";
 
-        int charsToBeDeleted = 0;
-
-        for (String e : a.split("")) {
-            if (!mapA.containsKey(e)) {
-                mapA.put(e, 1);
+        Map<Character, Integer> map = new HashMap<>();
+        int count = 0;
+        for(int i=0;i<first.length();i++){
+            if(map.get(first.charAt(i)) == null){
+                map.put(first.charAt(i), 1);
             } else {
-                mapA.put(e, mapA.get(e) + 1);
+                int cur = map.get(first.charAt(i));
+                map.put(first.charAt(i), cur+1);
             }
         }
-
-        for (String e : b.split("")) {
-            if (!mapB.containsKey(e)) {
-                mapB.put(e, 1);
+        for(int i=0;i < second.length();i++){
+            if(map.containsKey(second.charAt(i))){
+                int cur = map.get(second.charAt(i));
+                if(cur == 1){
+                    map.remove(second.charAt(i));
+                } else {
+                    map.put(second.charAt(i), cur-1);
+                }
             } else {
-                mapB.put(e, mapB.get(e) + 1);
+                count++;
             }
         }
 
-        for (String key : mapA.keySet()) {
-
-            if (!mapB.containsKey(key)) {
-                charsToBeDeleted += mapA.get(key);
-            }
-            if (mapA.containsKey(key) && mapB.containsKey(key)) {
-                System.out.println("mapA: " + key + " = " + mapA.get(key));
-                System.out.println("mapB: " + key + " = " + mapB.get(key));
-
-                charsToBeDeleted += Math.abs(mapA.get(key) - mapB.get(key));
-            }
+        for(Integer i: map.values()){
+            count=count+i;
         }
 
-        for (String key : mapB.keySet()) {
-            if (!mapA.containsKey(key)) {
-                charsToBeDeleted += mapB.get(key);
-            }
-        }
+        System.out.println(count);
 
-        System.out.println(mapA);
-        System.out.println(mapB);
-        return charsToBeDeleted;
-
-
+        return count;
     }
-
 }
+
+
 
